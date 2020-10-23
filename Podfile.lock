@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
   - Differentiator (4.0.1)
+  - JGProgressHUD (2.1)
   - ObjectMapper (3.4.2)
   - Realm (3.19.1):
     - Realm/Headers (= 3.19.1)
@@ -27,6 +28,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.8.2)
   - AlamofireObjectMapper (= 5.2.0)
+  - JGProgressHUD (= 2.1)
   - ObjectMapper (= 3.4.2)
   - RealmSwift (= 3.19.1)
   - RxCocoa (= 5.1.0)
@@ -39,6 +41,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireObjectMapper
     - Differentiator
+    - JGProgressHUD
     - ObjectMapper
     - Realm
     - RealmSwift
@@ -52,6 +55,7 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Realm: fb377747e694c7deb62d402400454134fe321bee
   RealmSwift: 1302b0ab60f3105a2b214a735eeb0938607cf16b
@@ -61,6 +65,6 @@ SPEC CHECKSUMS:
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
-PODFILE CHECKSUM: 619878018025c4d4c9887c4f185d61647abfa14c
+PODFILE CHECKSUM: 7b708b7854e9a96ef458bbc09e89f886c434e93e
 
 COCOAPODS: 1.9.3

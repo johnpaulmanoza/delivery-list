@@ -14,6 +14,7 @@ target 'LalaChallenge' do
   pod 'ObjectMapper',           '3.4.2'
   pod 'SDWebImage',             '4.4.3'
   pod 'RealmSwift',             '3.19.1'
+  pod 'JGProgressHUD',          '2.1'
 
   # Specify specific Swift Version per dependency
   post_install do |installer|

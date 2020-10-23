@@ -50,4 +50,21 @@ public class Delivery: Object, Mappable {
         senderPhone         <- map["sender.phone"]
         senderEmail         <- map["sender.email"]
     }
+    
+    public func totalDeliveryFee() -> String {
+        
+        let delFee = deliveryFee.replacingOccurrences(of: "$", with: "")
+        let delCharge = deliverySurcharge.replacingOccurrences(of: "$", with: "")
+        
+        guard
+            let delFeeValue = Double(delFee),
+            let delChargeValue = Double(delCharge)
+        else
+            { return "" }
+        
+        let total = delFeeValue + delChargeValue
+        let totalDesc = String(format: "%.2f", total)
+        
+        return "$\(totalDesc)"
+    }
 }
