@@ -33,7 +33,7 @@ class DeliveryListVC: UIViewController {
     
     private func customize() {
         
-        title = "Delivery List"
+        title = "My Deliveries"
         tableView.rowHeight = 80
         tableView.tableFooterView = UIView()
         view.addSubview(tableView)
@@ -81,6 +81,21 @@ class DeliveryListVC: UIViewController {
                 }
             })
             .disposed(by: bag)
+        
+        _ = Observable.zip(
+                tableView.rx.itemSelected,
+                tableView.rx.modelSelected(DeliveryListItem.Row.self)
+            )
+            .subscribe(onNext: { [weak this = self] (indexPath, model) in
+                this?.tableView.deselectRow(at: indexPath, animated: true)
+                switch model {
+                case .deliverySmallDetailItem(let data):
+                    this?.navigateToDelivery(detail: data)
+                default:
+                    break
+                }
+            })
+            .disposed(by: bag)
     }
     
     private func addPaginator() {
@@ -89,6 +104,12 @@ class DeliveryListVC: UIViewController {
         tableView.addInfiniteScroll { [weak this = self] (_) in
             this?.viewModel.paginateDeliveries()
         }
+    }
+    
+    private func navigateToDelivery(detail: DeliveryCellItem) {
+        let view = DeliveryDetailVC()
+        view.detail = detail
+        navigationController?.pushViewController(view, animated: true)
     }
 }
 

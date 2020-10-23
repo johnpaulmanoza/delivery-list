@@ -23,6 +23,8 @@
 		513B239F2542CCE700117058 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B239E2542CCE700117058 /* UIView.swift */; };
 		51EEB9D22542DB3400A93C38 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D12542DB3400A93C38 /* UITableView.swift */; };
 		51EEB9D42542E95E00A93C38 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D32542E95E00A93C38 /* UIViewController.swift */; };
+		51EEB9D62542F14A00A93C38 /* DeliveryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D52542F14A00A93C38 /* DeliveryDetailVC.swift */; };
+		51EEB9D82542F31000A93C38 /* DeliveryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D72542F31000A93C38 /* DeliveryDetailCell.swift */; };
 		E86398B247592C0D2F86C866 /* Pods_LalaChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C511935EE3CEEDD1C805EF /* Pods_LalaChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		513B239E2542CCE700117058 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		51EEB9D12542DB3400A93C38 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		51EEB9D32542E95E00A93C38 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		51EEB9D52542F14A00A93C38 /* DeliveryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailVC.swift; sourceTree = "<group>"; };
+		51EEB9D72542F31000A93C38 /* DeliveryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailCell.swift; sourceTree = "<group>"; };
 		5AEC16A62ADF28FB86176029 /* Pods-LalaChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalaChallenge.debug.xcconfig"; path = "Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C511935EE3CEEDD1C805EF /* Pods_LalaChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LalaChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CB08F9513C9D3D7E1F7196 /* Pods-LalaChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalaChallenge.release.xcconfig"; path = "Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				513B23992542C88200117058 /* DeliveryInfoCell.swift */,
+				51EEB9D72542F31000A93C38 /* DeliveryDetailCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				513B236A2542B35400117058 /* DeliveryListVC.swift */,
+				51EEB9D52542F14A00A93C38 /* DeliveryDetailVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -365,9 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				513B23852542B9A500117058 /* DeliveryRouter.swift in Sources */,
+				51EEB9D62542F14A00A93C38 /* DeliveryDetailVC.swift in Sources */,
 				513B239A2542C88200117058 /* DeliveryInfoCell.swift in Sources */,
 				513B239F2542CCE700117058 /* UIView.swift in Sources */,
 				513B23982542C7C800117058 /* DeliveryListItem.swift in Sources */,
+				51EEB9D82542F31000A93C38 /* DeliveryDetailCell.swift in Sources */,
 				513B23822542B94100117058 /* DeliveryService.swift in Sources */,
 				51EEB9D22542DB3400A93C38 /* UITableView.swift in Sources */,
 				513B23912542C23000117058 /* DeliveryListVM.swift in Sources */,

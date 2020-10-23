@@ -24,7 +24,7 @@ public class DeliveryListVM {
     private var page = 0
     private let limit = 20
     
-    public func loadDeliveries(page: Int = 0) {
+    public func loadDeliveries() {
         
         isLoading.onNext(page == 0)
 
@@ -52,7 +52,7 @@ public class DeliveryListVM {
     
     public func paginateDeliveries() {
         
-        page += 1; loadDeliveries(page: page)
+        page += 1; loadDeliveries()
     }
     
     private func showItems() {
