@@ -13,6 +13,7 @@
 		513B236E2542B35400117058 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B236C2542B35400117058 /* Main.storyboard */; };
 		513B23702542B35500117058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513B236F2542B35500117058 /* Assets.xcassets */; };
 		513B23732542B35500117058 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B23712542B35500117058 /* LaunchScreen.storyboard */; };
+		E86398B247592C0D2F86C866 /* Pods_LalaChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C511935EE3CEEDD1C805EF /* Pods_LalaChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		513B236F2542B35500117058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		513B23722542B35500117058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		513B23742542B35500117058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AEC16A62ADF28FB86176029 /* Pods-LalaChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalaChallenge.debug.xcconfig"; path = "Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		B4C511935EE3CEEDD1C805EF /* Pods_LalaChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LalaChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CB08F9513C9D3D7E1F7196 /* Pods-LalaChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalaChallenge.release.xcconfig"; path = "Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86398B247592C0D2F86C866 /* Pods_LalaChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09E4F6499C7EA4F4B3036543 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AEC16A62ADF28FB86176029 /* Pods-LalaChallenge.debug.xcconfig */,
+				D5CB08F9513C9D3D7E1F7196 /* Pods-LalaChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		35685591DD689134BF6FFABD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4C511935EE3CEEDD1C805EF /* Pods_LalaChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		513B235A2542B35400117058 = {
 			isa = PBXGroup;
 			children = (
 				513B23652542B35400117058 /* LalaChallenge */,
 				513B23642542B35400117058 /* Products */,
+				09E4F6499C7EA4F4B3036543 /* Pods */,
+				35685591DD689134BF6FFABD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 513B23772542B35500117058 /* Build configuration list for PBXNativeTarget "LalaChallenge" */;
 			buildPhases = (
+				35DE17D81A5A1F85601FC21D /* [CP] Check Pods Manifest.lock */,
 				513B235F2542B35400117058 /* Sources */,
 				513B23602542B35400117058 /* Frameworks */,
 				513B23612542B35400117058 /* Resources */,
+				B0CBDAC89296EAC788393140 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35DE17D81A5A1F85601FC21D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LalaChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0CBDAC89296EAC788393140 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		513B235F2542B35400117058 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		513B23782542B35500117058 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AEC16A62ADF28FB86176029 /* Pods-LalaChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		513B23792542B35500117058 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5CB08F9513C9D3D7E1F7196 /* Pods-LalaChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

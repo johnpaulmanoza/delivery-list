@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Differentiator (4.0.1)
+  - ObjectMapper (3.4.2)
+  - RxCocoa (5.1.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.0)
+  - SDWebImage (4.4.3):
+    - SDWebImage/Core (= 4.4.3)
+  - SDWebImage/Core (4.4.3)
+
+DEPENDENCIES:
+  - Alamofire (= 4.8.2)
+  - ObjectMapper (= 3.4.2)
+  - RxCocoa (= 5.1.0)
+  - RxDataSources (= 4.0.1)
+  - RxSwift (= 5.1.0)
+  - SDWebImage (= 4.4.3)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Differentiator
+    - ObjectMapper
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+
+PODFILE CHECKSUM: 396531d784d3d2d170475ca77b4e83a89f621421
+
+COCOAPODS: 1.9.3
