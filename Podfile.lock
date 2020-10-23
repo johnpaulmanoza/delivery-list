@@ -24,6 +24,7 @@ PODS:
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
+  - UIScrollView-InfiniteScroll (1.1.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.8.2)
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - RxDataSources (= 4.0.1)
   - RxSwift (= 5.1.0)
   - SDWebImage (= 4.4.3)
+  - UIScrollView-InfiniteScroll (= 1.1.0)
 
 SPEC REPOS:
   trunk:
@@ -50,6 +52,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SDWebImage
+    - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -64,7 +67,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: 7b708b7854e9a96ef458bbc09e89f886c434e93e
+PODFILE CHECKSUM: 7e76a6a01640b4518ab1f4499d2c523003f5f4bb
 
 COCOAPODS: 1.9.3

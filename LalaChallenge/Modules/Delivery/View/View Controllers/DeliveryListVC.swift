@@ -10,6 +10,7 @@ import UIKit
 import RxDataSources
 import RxSwift
 import JGProgressHUD
+import UIScrollView_InfiniteScroll
 
 class DeliveryListVC: UIViewController {
     
@@ -68,6 +69,26 @@ class DeliveryListVC: UIViewController {
                 })
             })
             .disposed(by: bag)
+        
+        _ = viewModel.isPagingEnabled.asObservable()
+            .subscribe(onNext: { [weak this = self] (shouldPaginate) in
+                guard let isPagingEnabled = shouldPaginate else { return }
+                if isPagingEnabled {
+                    this?.addPaginator()
+                } else {
+                    this?.tableView.finishInfiniteScroll()
+                    this?.tableView.removeInfiniteScroll()
+                }
+            })
+            .disposed(by: bag)
+    }
+    
+    private func addPaginator() {
+        tableView.finishInfiniteScroll()
+        tableView.infiniteScrollIndicatorStyle = .medium
+        tableView.addInfiniteScroll { [weak this = self] (_) in
+            this?.viewModel.paginateDeliveries()
+        }
     }
 }
 
