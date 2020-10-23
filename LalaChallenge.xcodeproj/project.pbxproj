@@ -3,16 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		513B23672542B35400117058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23662542B35400117058 /* AppDelegate.swift */; };
 		513B23692542B35400117058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23682542B35400117058 /* SceneDelegate.swift */; };
-		513B236B2542B35400117058 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B236A2542B35400117058 /* ViewController.swift */; };
-		513B236E2542B35400117058 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B236C2542B35400117058 /* Main.storyboard */; };
+		513B236B2542B35400117058 /* DeliveryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B236A2542B35400117058 /* DeliveryListVC.swift */; };
 		513B23702542B35500117058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513B236F2542B35500117058 /* Assets.xcassets */; };
 		513B23732542B35500117058 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B23712542B35500117058 /* LaunchScreen.storyboard */; };
+		513B237F2542B88C00117058 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B237E2542B88C00117058 /* APIManager.swift */; };
+		513B23822542B94100117058 /* DeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23812542B94100117058 /* DeliveryService.swift */; };
+		513B23852542B9A500117058 /* DeliveryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23842542B9A500117058 /* DeliveryRouter.swift */; };
+		513B23872542BAE200117058 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23862542BAE200117058 /* Delivery.swift */; };
+		513B23912542C23000117058 /* DeliveryListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23902542C23000117058 /* DeliveryListVM.swift */; };
+		513B23962542C33200117058 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B23942542C33200117058 /* Main.storyboard */; };
 		E86398B247592C0D2F86C866 /* Pods_LalaChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C511935EE3CEEDD1C805EF /* Pods_LalaChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +25,16 @@
 		513B23632542B35400117058 /* LalaChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LalaChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513B23662542B35400117058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		513B23682542B35400117058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		513B236A2542B35400117058 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		513B236D2542B35400117058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		513B236A2542B35400117058 /* DeliveryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListVC.swift; sourceTree = "<group>"; };
 		513B236F2542B35500117058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		513B23722542B35500117058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		513B23742542B35500117058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513B237E2542B88C00117058 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		513B23812542B94100117058 /* DeliveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryService.swift; sourceTree = "<group>"; };
+		513B23842542B9A500117058 /* DeliveryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRouter.swift; sourceTree = "<group>"; };
+		513B23862542BAE200117058 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
+		513B23902542C23000117058 /* DeliveryListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListVM.swift; sourceTree = "<group>"; };
+		513B23952542C33200117058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AEC16A62ADF28FB86176029 /* Pods-LalaChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalaChallenge.debug.xcconfig"; path = "Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C511935EE3CEEDD1C805EF /* Pods_LalaChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LalaChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CB08F9513C9D3D7E1F7196 /* Pods-LalaChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalaChallenge.release.xcconfig"; path = "Target Support Files/Pods-LalaChallenge/Pods-LalaChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,7 +58,6 @@
 				5AEC16A62ADF28FB86176029 /* Pods-LalaChallenge.debug.xcconfig */,
 				D5CB08F9513C9D3D7E1F7196 /* Pods-LalaChallenge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +90,124 @@
 		513B23652542B35400117058 /* LalaChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				513B23662542B35400117058 /* AppDelegate.swift */,
-				513B23682542B35400117058 /* SceneDelegate.swift */,
-				513B236A2542B35400117058 /* ViewController.swift */,
-				513B236C2542B35400117058 /* Main.storyboard */,
-				513B236F2542B35500117058 /* Assets.xcassets */,
-				513B23712542B35500117058 /* LaunchScreen.storyboard */,
-				513B23742542B35500117058 /* Info.plist */,
+				513B237A2542B77100117058 /* API */,
+				513B23882542C0F100117058 /* Modules */,
+				513B238D2542C13E00117058 /* Supporting Files */,
 			);
 			path = LalaChallenge;
+			sourceTree = "<group>";
+		};
+		513B237A2542B77100117058 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				513B237D2542B79200117058 /* Manager */,
+				513B237B2542B78300117058 /* Model */,
+				513B23832542B98900117058 /* Routers */,
+				513B23802542B8DC00117058 /* Services */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		513B237B2542B78300117058 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				513B23862542BAE200117058 /* Delivery.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		513B237D2542B79200117058 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				513B237E2542B88C00117058 /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		513B23802542B8DC00117058 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				513B23812542B94100117058 /* DeliveryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		513B23832542B98900117058 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				513B23842542B9A500117058 /* DeliveryRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		513B23882542C0F100117058 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				513B23892542C0FB00117058 /* Delivery */,
+				513B238F2542C1E900117058 /* More Modules like User */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		513B23892542C0FB00117058 /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				513B23932542C33200117058 /* Storyboard */,
+				513B238A2542C10D00117058 /* Model */,
+				513B238C2542C11F00117058 /* View */,
+				513B238B2542C11500117058 /* View Model */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
+		513B238A2542C10D00117058 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		513B238B2542C11500117058 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				513B23902542C23000117058 /* DeliveryListVM.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		513B238C2542C11F00117058 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				513B236A2542B35400117058 /* DeliveryListVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		513B238D2542C13E00117058 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				513B23712542B35500117058 /* LaunchScreen.storyboard */,
+				513B23742542B35500117058 /* Info.plist */,
+				513B236F2542B35500117058 /* Assets.xcassets */,
+				513B23662542B35400117058 /* AppDelegate.swift */,
+				513B23682542B35400117058 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		513B238F2542C1E900117058 /* More Modules like User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "More Modules like User";
+			sourceTree = "<group>";
+		};
+		513B23932542C33200117058 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				513B23942542C33200117058 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +270,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513B23962542C33200117058 /* Main.storyboard in Resources */,
 				513B23732542B35500117058 /* LaunchScreen.storyboard in Resources */,
 				513B23702542B35500117058 /* Assets.xcassets in Resources */,
-				513B236E2542B35400117058 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513B236B2542B35400117058 /* ViewController.swift in Sources */,
+				513B23852542B9A500117058 /* DeliveryRouter.swift in Sources */,
+				513B23822542B94100117058 /* DeliveryService.swift in Sources */,
+				513B23912542C23000117058 /* DeliveryListVM.swift in Sources */,
+				513B237F2542B88C00117058 /* APIManager.swift in Sources */,
+				513B236B2542B35400117058 /* DeliveryListVC.swift in Sources */,
 				513B23672542B35400117058 /* AppDelegate.swift in Sources */,
+				513B23872542BAE200117058 /* Delivery.swift in Sources */,
 				513B23692542B35400117058 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,20 +339,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		513B236C2542B35400117058 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				513B236D2542B35400117058 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		513B23712542B35500117058 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				513B23722542B35500117058 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		513B23942542C33200117058 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				513B23952542C33200117058 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -356,7 +479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UYBM4DV87M;
-				INFOPLIST_FILE = LalaChallenge/Info.plist;
+				INFOPLIST_FILE = "LalaChallenge/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UYBM4DV87M;
-				INFOPLIST_FILE = LalaChallenge/Info.plist;
+				INFOPLIST_FILE = "LalaChallenge/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

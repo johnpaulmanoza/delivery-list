@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DeliveryListVC: UIViewController {
+    
+    private let viewModel = DeliveryListVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        viewModel.loadDeliveries()
     }
-
-
 }
 
