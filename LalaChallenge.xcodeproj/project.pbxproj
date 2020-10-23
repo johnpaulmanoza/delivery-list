@@ -104,9 +104,9 @@
 		513B23652542B35400117058 /* LalaChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				513B239D2542CCD900117058 /* Extensions */,
 				513B237A2542B77100117058 /* API */,
 				513B23882542C0F100117058 /* Modules */,
+				513B239D2542CCD900117058 /* Extensions */,
 				513B238D2542C13E00117058 /* Supporting Files */,
 			);
 			path = LalaChallenge;
@@ -167,7 +167,6 @@
 		513B23892542C0FB00117058 /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
-				513B23932542C33200117058 /* Storyboard */,
 				513B238A2542C10D00117058 /* Model */,
 				513B238C2542C11F00117058 /* View */,
 				513B238B2542C11500117058 /* View Model */,
@@ -203,6 +202,7 @@
 		513B238D2542C13E00117058 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				513B23942542C33200117058 /* Main.storyboard */,
 				513B23712542B35500117058 /* LaunchScreen.storyboard */,
 				513B23742542B35500117058 /* Info.plist */,
 				513B236F2542B35500117058 /* Assets.xcassets */,
@@ -217,14 +217,6 @@
 			children = (
 			);
 			path = "More Modules like User";
-			sourceTree = "<group>";
-		};
-		513B23932542C33200117058 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				513B23942542C33200117058 /* Main.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		513B239B2542C88C00117058 /* Cells */ = {
