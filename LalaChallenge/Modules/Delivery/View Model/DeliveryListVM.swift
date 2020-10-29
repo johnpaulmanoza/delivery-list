@@ -8,6 +8,8 @@
 
 import Foundation
 import RxSwift
+import RealmSwift
+import RxRealm
 
 public class DeliveryListVM {
     
@@ -22,8 +24,21 @@ public class DeliveryListVM {
     private let bag = DisposeBag()
     private var items: [Delivery] = []
     private var page = 0
-    private let limit = 10
+    private let limit = 20
     
+    init() {
+        
+        let realm = try! Realm()
+        let items = realm.objects(Delivery.self)
+
+        // Observe changes in the list of deliveries in local db
+        _ = Observable
+            .array(from: items)
+            .subscribe(onNext: { [weak this = self] nextItems in
+                this?.items = nextItems
+                this?.showItems()
+            })
+    }
     /**
     Load list of deliveries
     */
@@ -46,12 +61,9 @@ public class DeliveryListVM {
                 this.isLoading.onNext(false)
                 this.isPagingEnabled.onNext(items.count == this.limit)
                 
-                // immediately display the items
-                this.items.append(contentsOf: items)
-                this.showItems()
-                
             }, onError: { [weak this = self] (e) in
                 
+                // Display any errors 
                 this?.isLoading.onNext(false)
                 this?.error.onNext(e.localizedDescription)
             })
@@ -62,6 +74,8 @@ public class DeliveryListVM {
         Paginate list of deliveries
      */
     public func paginateDeliveries() {
+        
+        // NOTE: increment page
         
         page += 1; loadDeliveries()
     }

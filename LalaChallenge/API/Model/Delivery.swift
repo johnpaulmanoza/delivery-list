@@ -29,6 +29,8 @@ public class Delivery: Object, Mappable {
     @objc dynamic public var senderPhone: String = ""
     @objc dynamic public var senderEmail: String = ""
     
+    @objc dynamic public var isFavorite: Bool = false
+    
     public required convenience init?(map: Map) {
         self.init()
     }

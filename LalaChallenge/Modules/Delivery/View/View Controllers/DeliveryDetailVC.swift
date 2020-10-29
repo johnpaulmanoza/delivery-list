@@ -12,11 +12,22 @@ import RxSwift
 
 class DeliveryDetailVC: UIViewController {
     
-    public var detail: DeliveryCellItem?
+    public var detail: DeliveryCellItem? {
+        didSet {
+            guard let delivery = detail?.itemDelivery else { return }
+            
+            // initialize view model with selected delivery item
+            viewModel = DeliveryDetailVM(delivery: delivery)
+        }
+    }
     
     private let favButton = UIButton(type: .custom)
     private let tableView = UITableView()
+    
     private var bottomSafeAreaHeight: CGFloat = 0
+    private var isFavoriteItem: Bool = false
+    private var viewModel: DeliveryDetailVM!
+    private let bag = DisposeBag()
     
     override func viewDidLoad() {
         
@@ -47,8 +58,8 @@ class DeliveryDetailVC: UIViewController {
         favButton.backgroundColor = UIColor.systemBlue
         favButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         favButton.titleLabel?.textColor = .gray
-        favButton.setTitle(Vocabulary.AddToFavorites, for: .normal)
-        
+        favButton.addTarget(self, action: #selector(favButtonTap(_:)), for: .touchUpInside)
+
         view.addSubview(favButton)
         view.bringSubviewToFront(favButton)
         
@@ -68,6 +79,14 @@ class DeliveryDetailVC: UIViewController {
     
     private func observe() {
         
+        // observe changes for isFavorite property of selected delivery item
+        _ = viewModel.isFavorite.asObserver()
+            .subscribe(onNext: { [weak this = self] (isFav) in
+                guard let this = this else { return }
+                this.isFavoriteItem = isFav
+                this.customizeFavButtonTitle()
+            })
+            .disposed(by: bag)
     }
     
     private func setupConstraint() {
@@ -79,6 +98,22 @@ class DeliveryDetailVC: UIViewController {
         favButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         favButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         favButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    private func customizeFavButtonTitle() {
+        // set fav button title
+        let title = isFavoriteItem ? Vocabulary.RemoveToFavorites : Vocabulary.AddToFavorites
+        favButton.setTitle(title, for: .normal)
+    }
+    
+    // Respond to fav button
+    @objc
+    private func favButtonTap(_ sender: UIButton) {
+        if isFavoriteItem {
+            viewModel.removeToFavorite()
+        } else {
+            viewModel.addToFavorite()
+        }
     }
 }
 

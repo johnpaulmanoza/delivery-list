@@ -25,4 +25,5 @@ class Vocabulary {
     static let DeliveryDetails = NSLocalizedString("Delivery Details")
     static let MyDeliveries = NSLocalizedString("My Deliveries")
     static let AddToFavorites = NSLocalizedString("Add To Favorites")
+    static let RemoveToFavorites = NSLocalizedString("Remove To Favorites")
 }

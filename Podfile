@@ -15,6 +15,7 @@ target 'LalaChallenge' do
   pod 'SDWebImage',             '4.4.3'
   pod 'RealmSwift',             '3.19.1'
   pod 'JGProgressHUD',          '2.1'
+  pod "RxRealm",                '1.0.0'
   
   pod 'UIScrollView-InfiniteScroll', '1.1.0'
 

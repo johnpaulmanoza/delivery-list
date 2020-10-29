@@ -22,6 +22,8 @@
 		513B239A2542C88200117058 /* DeliveryInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23992542C88200117058 /* DeliveryInfoCell.swift */; };
 		513B239F2542CCE700117058 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B239E2542CCE700117058 /* UIView.swift */; };
 		5155A742254A9CB200B6C590 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5155A741254A9CB200B6C590 /* Vocabulary.swift */; };
+		5155A744254AA52C00B6C590 /* DeliveryDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5155A743254AA52C00B6C590 /* DeliveryDetailVM.swift */; };
+		5155A746254AA69900B6C590 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5155A745254AA69900B6C590 /* RealmManager.swift */; };
 		51EEB9D22542DB3400A93C38 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D12542DB3400A93C38 /* UITableView.swift */; };
 		51EEB9D42542E95E00A93C38 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D32542E95E00A93C38 /* UIViewController.swift */; };
 		51EEB9D62542F14A00A93C38 /* DeliveryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D52542F14A00A93C38 /* DeliveryDetailVC.swift */; };
@@ -47,6 +49,8 @@
 		513B23992542C88200117058 /* DeliveryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoCell.swift; sourceTree = "<group>"; };
 		513B239E2542CCE700117058 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5155A741254A9CB200B6C590 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
+		5155A743254AA52C00B6C590 /* DeliveryDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailVM.swift; sourceTree = "<group>"; };
+		5155A745254AA69900B6C590 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		51EEB9D12542DB3400A93C38 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		51EEB9D32542E95E00A93C38 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		51EEB9D52542F14A00A93C38 /* DeliveryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailVC.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				513B237E2542B88C00117058 /* APIManager.swift */,
+				5155A745254AA69900B6C590 /* RealmManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				513B23902542C23000117058 /* DeliveryListVM.swift */,
+				5155A743254AA52C00B6C590 /* DeliveryDetailVM.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -204,13 +210,13 @@
 		513B238D2542C13E00117058 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5155A741254A9CB200B6C590 /* Vocabulary.swift */,
 				513B23942542C33200117058 /* Main.storyboard */,
 				513B23712542B35500117058 /* LaunchScreen.storyboard */,
 				513B23742542B35500117058 /* Info.plist */,
 				513B236F2542B35500117058 /* Assets.xcassets */,
 				513B23662542B35400117058 /* AppDelegate.swift */,
 				513B23682542B35400117058 /* SceneDelegate.swift */,
-				5155A741254A9CB200B6C590 /* Vocabulary.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -369,6 +375,8 @@
 				51EEB9D62542F14A00A93C38 /* DeliveryDetailVC.swift in Sources */,
 				513B239A2542C88200117058 /* DeliveryInfoCell.swift in Sources */,
 				5155A742254A9CB200B6C590 /* Vocabulary.swift in Sources */,
+				5155A744254AA52C00B6C590 /* DeliveryDetailVM.swift in Sources */,
+				5155A746254AA69900B6C590 /* RealmManager.swift in Sources */,
 				513B239F2542CCE700117058 /* UIView.swift in Sources */,
 				513B23982542C7C800117058 /* DeliveryListItem.swift in Sources */,
 				51EEB9D82542F31000A93C38 /* DeliveryDetailCell.swift in Sources */,

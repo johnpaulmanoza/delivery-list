@@ -58,8 +58,6 @@ class APIManager {
                     observer.onError(error)
                 }
             })
-            // IMPORTANT: We NEED to add a validation in order for the retrier to work.
-            .validate(statusCode: 200..<403)
             
             return Disposables.create()
         }
