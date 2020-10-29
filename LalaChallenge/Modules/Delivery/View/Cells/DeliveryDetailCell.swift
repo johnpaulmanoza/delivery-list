@@ -11,23 +11,27 @@ import SDWebImage
 
 class DeliveryDetailCell: UITableViewCell {
 
-    var toLabel = UILabel()
-    var fromLabel = UILabel()
-    var toPlaceholder = UILabel()
-    var fromPlaceholder = UILabel()
+    private var toLabel = UILabel()
+    private var fromLabel = UILabel()
+    private var toPlaceholder = UILabel()
+    private var fromPlaceholder = UILabel()
+    private var itemPlaceholder = UILabel()
+    private var pricePlaceholder = UILabel()
+    private var priceLabel = UILabel()
     
-    var itemPlaceholder = UILabel()
-    var itemImageView = UIImageView()
-    var pricePlaceholder = UILabel()
-    var priceLabel = UILabel()
+    private var itemImageView = UIImageView()
     
+    // Check and display received cell data 
     var deliveryInfo: DeliveryCellItem? {
         didSet {
             guard let info = deliveryInfo?.itemDelivery else { return }
+            
+            // Display Delivery Details
             fromLabel.text = info.routeStart
             toLabel.text = info.routeEnd
             priceLabel.text = info.totalDeliveryFee()
 
+            // Display image if valid
             guard let imageUrl = URL(string: info.deliveryItemPic) else { return }
             itemImageView.sd_setImage(with: imageUrl, completed: nil)
         }
@@ -35,10 +39,17 @@ class DeliveryDetailCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(itemImageView); addSubview(itemPlaceholder)
-        addSubview(toLabel); addSubview(toPlaceholder)
-        addSubview(fromLabel); addSubview(fromPlaceholder)
-        addSubview(priceLabel); addSubview(pricePlaceholder)
+        
+        // add ui elements
+        addSubview(itemImageView)
+        addSubview(itemPlaceholder)
+        addSubview(toLabel)
+        addSubview(toPlaceholder)
+        addSubview(fromLabel)
+        addSubview(fromPlaceholder)
+        addSubview(priceLabel)
+        addSubview(pricePlaceholder)
+        
         customize()
         setConstraints()
     }
@@ -49,10 +60,14 @@ class DeliveryDetailCell: UITableViewCell {
     
     private func customize() {
         selectionStyle = .none
-        fromPlaceholder.text = "From"
-        toPlaceholder.text = "To"
-        itemPlaceholder.text = "Goods to Deliver"
-        pricePlaceholder.text = "Delivery Fee"
+        
+        // set default texts
+        fromPlaceholder.text = Vocabulary.From
+        toPlaceholder.text = Vocabulary.To
+        itemPlaceholder.text = Vocabulary.GoodsToDeliver
+        pricePlaceholder.text = Vocabulary.DeliveryFee
+        
+        // customize font styles
         toLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         fromLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         priceLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -60,12 +75,16 @@ class DeliveryDetailCell: UITableViewCell {
         fromPlaceholder.font = UIFont.systemFont(ofSize: 18)
         pricePlaceholder.font = UIFont.systemFont(ofSize: 18)
         itemPlaceholder.font = UIFont.systemFont(ofSize: 18)
+        
+        // customize label alignments
         fromLabel.textAlignment = .right
         toLabel.textAlignment = .right
+        priceLabel.textAlignment = .right
+        
+        // customize image view
         itemImageView.clipsToBounds = true
         itemImageView.layer.cornerRadius = 5.0
         itemImageView.backgroundColor = .lightGray
-        priceLabel.textAlignment = .right
     }
     
     func setConstraints() {
@@ -127,12 +146,5 @@ class DeliveryDetailCell: UITableViewCell {
         priceLabel.leadingAnchor.constraint(equalTo: pricePlaceholder.trailingAnchor, constant: 10).isActive = true
         priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         priceLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-//        priceLabel.translatesAutoresizingMaskIntoConstraints = false
-//        priceLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//        priceLabel.leadingAnchor.constraint(equalTo: toLabel.trailingAnchor, constant: 10).isActive = true
-//        priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-//        priceLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//        priceLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
     }
 }

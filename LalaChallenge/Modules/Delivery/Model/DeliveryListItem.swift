@@ -14,15 +14,16 @@ enum DeliveryListItem: SectionModelType {
 
     typealias Item = Row
 
+    // Declare different tableview sections here
     case listSection(header: String, items: [Row])
 
     enum Row {
-        // declare per row type/layout
+        // Declare different cell layout here
         case deliverySmallDetailItem(item: DeliveryCellItem)
         case deliveryFullDetailItem(item: DeliveryCellItem)
     }
 
-    // followings are not directly related to this topic, but represents how to conform to SectionModelType
+    // conformance to SectionModelType
     var items: [Row] {
         switch self {
         case .listSection(_, let items):
@@ -37,6 +38,8 @@ enum DeliveryListItem: SectionModelType {
         }
     }
 }
+
+// Create a UI model class, to differentiate data per UI class
 
 class DeliveryCellItem {
 

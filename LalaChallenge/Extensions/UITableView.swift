@@ -9,7 +9,9 @@
 import UIKit
 
 extension UITableViewCell {
-
+    /**
+     To easily identify cells by their reuseIdentifier
+    */
     public static var id: String {
         return String(describing: self)
     }

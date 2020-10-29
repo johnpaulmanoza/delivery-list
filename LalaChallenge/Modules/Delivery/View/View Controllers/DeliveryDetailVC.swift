@@ -16,6 +16,7 @@ class DeliveryDetailVC: UIViewController {
     
     private let favButton = UIButton(type: .custom)
     private let tableView = UITableView()
+    private var bottomSafeAreaHeight: CGFloat = 0
     
     override func viewDidLoad() {
         
@@ -30,21 +31,33 @@ class DeliveryDetailVC: UIViewController {
     
     private func customize() {
         
-        title = "Delivery Details"
+        title = Vocabulary.DeliveryDetails
+        
+        // add and customize tableview
         tableView.rowHeight = 500; tableView.dataSource = self
         tableView.tableFooterView = UIView()
         view.addSubview(tableView)
         
+        // register prototype cells for the tableview
         tableView.register(DeliveryDetailCell.self, forCellReuseIdentifier: DeliveryDetailCell.id)
         tableView.pin(to: view)
         
+        // add fav button
         favButton.layer.cornerRadius = 5
-        favButton.backgroundColor = UIColor.blue
+        favButton.backgroundColor = UIColor.systemBlue
         favButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         favButton.titleLabel?.textColor = .gray
-        favButton.setTitle("Add to Favorite", for: .normal)
+        favButton.setTitle(Vocabulary.AddToFavorites, for: .normal)
+        
         view.addSubview(favButton)
         view.bringSubviewToFront(favButton)
+        
+        // get safe insets
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.windows[0]
+            let safeFrame = window.safeAreaLayoutGuide.layoutFrame
+            bottomSafeAreaHeight = window.frame.maxY - safeFrame.maxY
+        }
         
         setupConstraint()
     }
@@ -58,8 +71,11 @@ class DeliveryDetailVC: UIViewController {
     }
     
     private func setupConstraint() {
+        // compute the fav button bottom constraint
+        // value should be a negative value
+        let favButtonBottomsConst = -1 * (bottomSafeAreaHeight + 10)
         favButton.translatesAutoresizingMaskIntoConstraints = false
-        favButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        favButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: favButtonBottomsConst).isActive = true
         favButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         favButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         favButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -67,6 +83,8 @@ class DeliveryDetailVC: UIViewController {
 }
 
 extension DeliveryDetailVC: UITableViewDataSource, UITableViewDelegate {
+    
+    // Provide Datasource for the tableview
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -78,6 +96,7 @@ extension DeliveryDetailVC: UITableViewDataSource, UITableViewDelegate {
         else
             { return UITableViewCell() }
         
+        // set cell model data
         cell.deliveryInfo = detail
         
         return cell

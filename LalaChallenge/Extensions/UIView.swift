@@ -9,7 +9,9 @@
 import UIKit
 
 extension UIView {
-    
+    /**
+     To easily pin constraints to superview
+    */
     func pin(to superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         topAnchor.constraint(equalTo: superView.topAnchor).isActive = true

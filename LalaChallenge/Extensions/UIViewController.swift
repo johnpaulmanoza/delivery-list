@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIViewController {
+    /**
+     To easily display a prompt or alert view
+    */
     func presentAlertWithTitle(title: String, message: String, options: String..., completion: @escaping (Int) -> Void) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         for (index, option) in options.enumerated() {

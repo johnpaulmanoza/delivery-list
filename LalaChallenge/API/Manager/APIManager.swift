@@ -15,12 +15,16 @@ import RealmSwift
 
 class APIManager {
 
-    static var shared = APIManager()
     private var manager: Alamofire.SessionManager
     
     public func baseUrl() -> String {
-        let url = "https://mock-api-mobile.dev.lalamove.com"
-        // Add env checking here if possible
+        var url = ""
+        // Add env checking here if to switch from dev to production base url
+        #if RELEASE
+            url = "specify production url here"
+        #else
+            url = "https://mock-api-mobile.dev.lalamove.com"
+        #endif
         return url
     }
     
@@ -38,34 +42,8 @@ class APIManager {
         manager = Alamofire.SessionManager(configuration: config)
     }
     
-    // MARK: Request with JSON as Result
-    public func request(_ urlConvertible: URLRequestConvertible) -> Observable<Any> {
-        // Create an RxSwift observable, which will be the one to call the request when subscribed to
-        return Observable<Any>.create { [weak this = self] observer in
-
-            guard let this = this else { return  Disposables.create() }
-            
-            // We need to omit 401 - status code, bc TaskSessionDelegate will NOT be called
-            // if we include 401 here, causing the retrier to NOT work.
-            // Ref: https://github.com/Alamofire/Alamofire/issues/2214
-            var codes: [Int] = []; codes.append(contentsOf: 200...400); codes.append(contentsOf: 402..<599)
-            
-            this.manager.request(urlConvertible)
-                .validate(statusCode: codes)
-                .responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let value):
-                    observer.onNext(value); observer.onCompleted()
-                case .failure(let error):
-                    observer.onError(error)
-                }
-            })
-            
-            return Disposables.create()
-        }
-    }
-    
-    // MARK: Request with Array of Mapped Items as Result
+    // NOTE: When this fnx received a response, it will automatically map the object
+    // and store to the local database via Realm.
     public func requestCollection<T: Mappable>(_ urlConvertible: URLRequestConvertible, _ type: T.Type? = nil) -> Observable<Any> {
         // Create an RxSwift observable, which will be the one to call the request when subscribed to
         return Observable<Any>.create { [weak this = self] observer in
@@ -86,5 +64,4 @@ class APIManager {
             return Disposables.create()
         }
     }
-
 }

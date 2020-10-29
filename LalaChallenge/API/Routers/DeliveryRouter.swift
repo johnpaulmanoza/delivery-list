@@ -41,7 +41,8 @@ enum DeliveryRouter: URLRequestConvertible {
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-        let url = try APIManager.shared.baseUrl().asURL()
+        let manager = APIManager()
+        let url = try manager.baseUrl().asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
 
         // HTTP Method

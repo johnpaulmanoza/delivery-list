@@ -33,11 +33,14 @@ class DeliveryListVC: UIViewController {
     
     private func customize() {
         
-        title = "My Deliveries"
+        title = Vocabulary.MyDeliveries
+        
+        // add and customize tableview
         tableView.rowHeight = 80
         tableView.tableFooterView = UIView()
         view.addSubview(tableView)
         
+        // register prototype cells for the tableview
         tableView.register(DeliveryInfoCell.self, forCellReuseIdentifier: DeliveryInfoCell.id)
         tableView.pin(to: view)
     }
@@ -46,12 +49,15 @@ class DeliveryListVC: UIViewController {
         
         viewModel.loadDeliveries()
         
+        // Observe changes from the viewmodel sections
+        // and update the list accordingly
         _ = viewModel.sections.asObservable()
             .bind(to: tableView.rx.items(dataSource: dataSource))
     }
     
     private func observe() {
         
+        // Update Loader Status
         _ = viewModel.isLoading.asObservable()
             .subscribe(onNext: { [weak this = self] (isloading) in
                 guard let this = this else { return }
@@ -61,15 +67,20 @@ class DeliveryListVC: UIViewController {
             })
             .disposed(by: bag)
         
+        // Show an error once view model throws one
         _ = viewModel.error.asObservable()
             .subscribe(onNext: { [weak this = self] (error) in
                 guard let errorMsg = error else { return }
-                this?.presentAlertWithTitle(title: "Error Network Request", message: errorMsg, options: "Retry", completion: { _ in
-                    this?.viewModel.loadDeliveries()
-                })
+                this?.presentAlertWithTitle(title: Vocabulary.ErrorNetworkRequest,
+                                            message: errorMsg,
+                                            options: Vocabulary.Retry,
+                                            completion: { _ in
+                                                this?.viewModel.loadDeliveries()
+                                            })
             })
             .disposed(by: bag)
         
+        // Update Paginator Status
         _ = viewModel.isPagingEnabled.asObservable()
             .subscribe(onNext: { [weak this = self] (shouldPaginate) in
                 guard let isPagingEnabled = shouldPaginate else { return }
@@ -82,6 +93,7 @@ class DeliveryListVC: UIViewController {
             })
             .disposed(by: bag)
         
+        // Observe row selections
         _ = Observable.zip(
                 tableView.rx.itemSelected,
                 tableView.rx.modelSelected(DeliveryListItem.Row.self)
@@ -99,6 +111,7 @@ class DeliveryListVC: UIViewController {
     }
     
     private func addPaginator() {
+        // end the current pagination and restart
         tableView.finishInfiniteScroll()
         tableView.infiniteScrollIndicatorStyle = .medium
         tableView.addInfiniteScroll { [weak this = self] (_) in
@@ -106,6 +119,9 @@ class DeliveryListVC: UIViewController {
         }
     }
     
+    /**
+    Navigate to Delivery Details Page
+     */
     private func navigateToDelivery(detail: DeliveryCellItem) {
         let view = DeliveryDetailVC()
         view.detail = detail
@@ -115,12 +131,14 @@ class DeliveryListVC: UIViewController {
 
 extension DeliveryListVC {
 
+    // Provide Datasource for the tableview
     public var dataSource: RxTableViewSectionedReloadDataSource<DeliveryListItem> {
         let dataSource = RxTableViewSectionedReloadDataSource<DeliveryListItem>(configureCell: { (source, tableView, indexPath, _) in
 
             switch source[indexPath] {
             case .deliverySmallDetailItem(let data):
                 let cell = tableView.dequeueReusableCell(withIdentifier: DeliveryInfoCell.id, for: indexPath)
+                // set cell model data
                 (cell as! DeliveryInfoCell).deliveryInfo = data
                 return cell
             default:

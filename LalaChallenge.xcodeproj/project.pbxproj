@@ -21,6 +21,7 @@
 		513B23982542C7C800117058 /* DeliveryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23972542C7C800117058 /* DeliveryListItem.swift */; };
 		513B239A2542C88200117058 /* DeliveryInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B23992542C88200117058 /* DeliveryInfoCell.swift */; };
 		513B239F2542CCE700117058 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B239E2542CCE700117058 /* UIView.swift */; };
+		5155A742254A9CB200B6C590 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5155A741254A9CB200B6C590 /* Vocabulary.swift */; };
 		51EEB9D22542DB3400A93C38 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D12542DB3400A93C38 /* UITableView.swift */; };
 		51EEB9D42542E95E00A93C38 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D32542E95E00A93C38 /* UIViewController.swift */; };
 		51EEB9D62542F14A00A93C38 /* DeliveryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EEB9D52542F14A00A93C38 /* DeliveryDetailVC.swift */; };
@@ -45,6 +46,7 @@
 		513B23972542C7C800117058 /* DeliveryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListItem.swift; sourceTree = "<group>"; };
 		513B23992542C88200117058 /* DeliveryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoCell.swift; sourceTree = "<group>"; };
 		513B239E2542CCE700117058 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5155A741254A9CB200B6C590 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		51EEB9D12542DB3400A93C38 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		51EEB9D32542E95E00A93C38 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		51EEB9D52542F14A00A93C38 /* DeliveryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailVC.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				513B236F2542B35500117058 /* Assets.xcassets */,
 				513B23662542B35400117058 /* AppDelegate.swift */,
 				513B23682542B35400117058 /* SceneDelegate.swift */,
+				5155A741254A9CB200B6C590 /* Vocabulary.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				513B23852542B9A500117058 /* DeliveryRouter.swift in Sources */,
 				51EEB9D62542F14A00A93C38 /* DeliveryDetailVC.swift in Sources */,
 				513B239A2542C88200117058 /* DeliveryInfoCell.swift in Sources */,
+				5155A742254A9CB200B6C590 /* Vocabulary.swift in Sources */,
 				513B239F2542CCE700117058 /* UIView.swift in Sources */,
 				513B23982542C7C800117058 /* DeliveryListItem.swift in Sources */,
 				51EEB9D82542F31000A93C38 /* DeliveryDetailCell.swift in Sources */,

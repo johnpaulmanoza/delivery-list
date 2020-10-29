@@ -10,6 +10,9 @@ import Foundation
 import RealmSwift
 import ObjectMapper
 
+// NOTE: This class serves two purposes, to map the response
+// and to create a new schema for the local database object
+
 public class Delivery: Object, Mappable {
 
     @objc dynamic public var deliveryId: String = ""
@@ -51,8 +54,12 @@ public class Delivery: Object, Mappable {
         senderEmail         <- map["sender.email"]
     }
     
+    /**
+    Compute Total Delivery Fee by adding surcharge and delivery fee
+     */
     public func totalDeliveryFee() -> String {
         
+        // Remove currency and convert these values into number
         let delFee = deliveryFee.replacingOccurrences(of: "$", with: "")
         let delCharge = deliverySurcharge.replacingOccurrences(of: "$", with: "")
         

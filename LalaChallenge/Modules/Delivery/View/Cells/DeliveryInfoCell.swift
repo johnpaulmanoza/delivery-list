@@ -11,18 +11,23 @@ import SDWebImage
 
 class DeliveryInfoCell: UITableViewCell {
 
-    var itemImageView = UIImageView()
-    var toLabel = UILabel()
-    var fromLabel = UILabel()
-    var priceLabel = UILabel()
+    private var toLabel = UILabel()
+    private var fromLabel = UILabel()
+    private var priceLabel = UILabel()
     
+    private var itemImageView = UIImageView()
+    
+    // Check and display received cell data 
     var deliveryInfo: DeliveryCellItem? {
         didSet {
+            
+            // Display Delivery Details
             guard let info = deliveryInfo?.itemDelivery else { return }
-            fromLabel.text = "From: \(info.routeStart)"
-            toLabel.text = "To: \(info.routeEnd)"
+            fromLabel.text = "\(Vocabulary.From): \(info.routeStart)"
+            toLabel.text = "\(Vocabulary.To): \(info.routeEnd)"
             priceLabel.text = info.totalDeliveryFee()
             
+            // Display image if valid
             guard let imageUrl = URL(string: info.deliveryItemPic) else { return }
             itemImageView.sd_setImage(with: imageUrl, completed: nil)
         }
@@ -30,10 +35,13 @@ class DeliveryInfoCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        // add ui elements
         addSubview(itemImageView)
         addSubview(toLabel)
         addSubview(fromLabel)
         addSubview(priceLabel)
+        
         customize()
         setConstraints()
     }
@@ -43,10 +51,14 @@ class DeliveryInfoCell: UITableViewCell {
     }
     
     private func customize() {
+        
+        // customize label alignments
+        priceLabel.textAlignment = .right
+        
+        // customize image view
         itemImageView.clipsToBounds = true
         itemImageView.layer.cornerRadius = 5.0
         itemImageView.backgroundColor = .lightGray
-        priceLabel.textAlignment = .right
     }
     
     func setConstraints() {

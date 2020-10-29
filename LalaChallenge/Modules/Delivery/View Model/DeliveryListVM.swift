@@ -22,10 +22,16 @@ public class DeliveryListVM {
     private let bag = DisposeBag()
     private var items: [Delivery] = []
     private var page = 0
-    private let limit = 20
+    private let limit = 10
     
+    /**
+    Load list of deliveries
+    */
     public func loadDeliveries() {
         
+        // show loader only on the first load, otherwise hide it
+        // since we already have a pagination loader at the bottom
+        // of the list
         isLoading.onNext(page == 0)
 
         _ = deliveryService.loadDeliveries(offset: page, limit: limit)
@@ -34,11 +40,13 @@ public class DeliveryListVM {
                 guard let this = this else { return }
                 guard let items = values as? [Delivery] else { return }
                 
-                // stop pagination and hide loader
+                // stop list pagination and hide loader
+                // NOTE: Stop pagination when the results count
+                // is less than the limit
                 this.isLoading.onNext(false)
                 this.isPagingEnabled.onNext(items.count == this.limit)
                 
-                // display items
+                // immediately display the items
                 this.items.append(contentsOf: items)
                 this.showItems()
                 
@@ -50,11 +58,17 @@ public class DeliveryListVM {
             .disposed(by: bag)
     }
     
+    /**
+        Paginate list of deliveries
+     */
     public func paginateDeliveries() {
         
         page += 1; loadDeliveries()
     }
     
+    /**
+    Display list items by iterating the delivery results and converting them to UI Model Classes
+     */
     private func showItems() {
         
         let listItems = items
